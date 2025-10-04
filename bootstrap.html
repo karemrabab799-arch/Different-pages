@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skin Care</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .btn-primary {
+      background: #6f42c1;
+      border: none;
+      border-radius: 25px;
+      padding: 8px 20px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #5a32a3;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0d6efd;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* footer style */
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    .back-home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: orange;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      z-index: 1000;
+      transition: 0.3s, transform 0.2s;
+    }
+
+  
+  .back-home-btn:hover {
+      background-color: rgb(0, 111, 128);
+      color: white;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <a href="homepage.html" class="back-home-btn">🏠 Back to Home</a>
+
+  <div class="container my-5">
+    <h1 class="text-center mb-5 text-info">✨ Skin Care Collection ✨</h1>
+    <div class="row">
+
+      
+      <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="photo_2025-08-19_07-02-24.jpg" class="card-img-top" alt="Product 1">
+          <div class="card-body">
+            <h5 class="card-title">Product 1</h5>
+            <a href="#">Click</a>
+            <br><br>
+            <div class="btn btn-primary">Buy</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="photo_2025-08-19_07-02-29.jpg" class="card-img-top" alt="Product 2">
+          <div class="card-body">
+            <h5 class="card-title">Product 2</h5>
+            <a href="#">Click</a>
+            <br><br>
+            <div class="btn btn-primary">Buy</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="photo_2025-08-19_07-02-32.jpg" class="card-img-top" alt="Product 3">
+          <div class="card-body">
+            <h5 class="card-title">Product 3</h5>
+            <a href="bootstrap2.html" target="_blank">Click</a>
+            <br><br>
+            <div class="btn btn-primary">Buy</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="photo_2025-08-19_07-02-36.jpg" class="card-img-top" alt="Product 4">
+          <div class="card-body">
+            <h5 class="card-title">Product 4</h5>
+            <a href="#">Click</a>
+            <br><br>
+            <div class="btn btn-primary">Buy</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="photo_2025-08-19_07-02-39.jpg" class="card-img-top" alt="Product 5">
+          <div class="card-body">
+            <h5 class="card-title">Product 5</h5>
+            <a href="#">Click</a>
+            <br><br>
+            <div class="btn btn-primary">Buy</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="photo_2025-08-19_07-02-43.jpg" class="card-img-top" alt="Product 6">
+          <div class="card-body">
+            <h5 class="card-title">Product 6</h5>
+            <a href="#">Click</a>
+            <br><br>
+            <div class="btn btn-primary">Buy</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>🌸 All Rights Reserved © 2025 | Skin Care Website 🌸</p>
+  </footer>
+
+  <script src="js/popper.min.js"></script>
+  <script src="js/jquery-3.7.1.js"></script>
+  <script src="js/bootstrap.js"></script>
+</body>
+</html>

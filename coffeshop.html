@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7efe5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #6f4e37;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background: #6f4e37;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background: #f5f5f5;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+
+    .fail {
+      color: red;
+      font-weight: bold;
+    }
+
+    
+    .back-home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color:  #6f4e37;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      z-index: 1000;
+      transition: 0.3s, transform 0.2s;
+    }
+
+  
+  .back-home-btn:hover {
+      background-color: #f7efe5 ;
+      color: #6f4e37;
+      transform: translateY(-2px);
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <a href="homepage.html" class="back-home-btn">🏠 Back to Home</a>
+
+  <div class="container">
+    <h2>☕️ Coffee Shop Customers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <th>Size</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    let customers = [
+      { name: "Ali", balance: 20, size: "small" },
+      { name: "Sara", balance: 5, size: "large" },
+      { name: "Omar", balance: 25, size: "medium" },
+      { name: "Mona", balance: 0, size: "small" }
+    ];
+
+    let tableBody = "";
+    for (let i = 0; i < customers.length; i++) {
+      let c = customers[i];
+      let price = 0;
+      switch (c.size) {
+        case "small": price = 10; break;
+        case "medium": price = 15; break;
+        case "large": price = 20; break;
+        default: price = 0; break;
+      }
+
+      if (c.balance >= price && price > 0) {
+        tableBody += `
+          <tr>
+            <td>${c.name}</td>
+            <td>${c.size}</td>
+            <td class="success">✅ Bought (${c.balance - price} EGP left)</td>
+          </tr>`;
+      } else {
+        tableBody +=` 
+          <tr>
+            <td>${c.name}</td>
+            <td>${c.size}</td>
+            <td class="fail">❌ Cannot Buy (Balance = ${c.balance})</td>
+          </tr>`;
+      }
+    }
+
+    document.getElementById("tableBody").innerHTML = tableBody;
+
+  </script>
+
+</body>
+</html>

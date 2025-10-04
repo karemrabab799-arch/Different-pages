@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🏦 My Bank</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bank {
+      background: #fff;
+      width: 450px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    .balance {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #27ae60;
+    }
+    input, select {
+      width: 80%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .deposit {
+      background: #27ae60;
+      color: white;
+    }
+    .deposit:hover {
+      background: #2ecc71;
+    }
+    .withdraw {
+      background: #c0392b;
+      color: white;
+    }
+    .withdraw:hover {
+      background: #e74c3c;
+    }
+    .log {
+      margin-top: 20px;
+      text-align: left;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .log p {
+      margin: 5px 0;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .success {
+      background: #ecf9f1;
+      color: #27ae60;
+    }
+    .error {
+      background: #fdecea;
+      color: #c0392b;
+    }
+     .back-home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      z-index: 1000;
+      transition: 0.3s, transform 0.2s;
+    }
+
+  
+  .back-home-btn:hover {
+      background-color: rgb(0, 128, 122);
+      transform: translateY(-2px);
+    }
+
+  </style>
+</head>
+<body>
+    <a href="homepage.html" class="back-home-btn">🏠 Back to Home</a>
+
+  <div class="bank">
+    <h1>🏦 My Bank</h1>
+    <!-- اختيار العميل -->
+    <select id="customer" onchange="updateBalance()">
+      <option value="Rabab">Rabab</option> 
+      <option value="Rana">Rana</option>
+      <option value="Somia">Somia</option>
+    </select>
+    <div class="balance">Balance: <span id="balance">0</span> EGP</div>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <br>
+    <button class="deposit" onclick="deposit()">Deposit</button>
+    <button class="withdraw" onclick="withdraw()">Withdraw</button>
+    <div class="log" id="log"></div>
+  </div>
+  <script>
+    
+    let accounts = {
+      "Rabab": 5000, 
+      "Rana": 2000,
+      "Somia": 500
+    };
+
+    function getSelectedCustomer() {
+      return document.getElementById("customer").value;
+    }
+
+    function updateBalance() {
+      let customer = getSelectedCustomer();
+      document.getElementById("balance").textContent = accounts[customer];
+      document.getElementById("log").innerHTML = ""; 
+    }
+
+    function logMessage(message, type="success") {
+      let logDiv = document.getElementById("log");
+      let p = document.createElement("p");
+      p.className = type;
+      p.textContent = message;
+      logDiv.prepend(p);
+    }
+
+    function deposit() {
+      let amount = parseInt(document.getElementById("amount").value);
+      let customer = getSelectedCustomer();
+      if (isNaN(amount) || amount <= 0) {
+        logMessage("Enter a valid deposit amount!", "error");
+        return;
+      }
+      accounts[customer] += amount;
+      updateBalance();
+      logMessage(customer + " deposited " + amount + " EGP. New balance = " + accounts[customer] + " EGP", "success");
+    }
+
+    function withdraw() {
+      let amount = parseInt(document.getElementById("amount").value);
+      let customer = getSelectedCustomer();
+      if (isNaN(amount) || amount <= 0) {
+        logMessage("Enter a valid withdrawal amount!", "error");
+        return;
+      }
+      if (amount > accounts[customer]) {
+        logMessage(customer + " has insufficient funds. Balance = " + accounts[customer] + " EGP", "error");
+      } else {
+        accounts[customer] -= amount;
+        updateBalance();
+        logMessage(customer + " withdrew " + amount + " EGP. New balance = " + accounts[customer] + " EGP", "success");
+      }
+    }
+
+    
+    updateBalance();
+  </script>
+</body>
+</html>

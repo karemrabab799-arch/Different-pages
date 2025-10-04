@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+
+
+
+
+
+<style>
+  body {
+    background: linear-gradient(135deg, #fffaf7 0%, #f3fbff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+  }
+
+  
+  .container h1.text-center {
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #6f4e37;
+    text-shadow: 0 2px 8px rgba(111,78,55,0.08);
+  }
+
+  
+  .card {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .28s ease, box-shadow .28s ease;
+    background: #ffffff;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(35,40,50,0.08);
+  }
+  .card .card-body { padding: 1.25rem; }
+
+  
+  .card-img-top {
+    width: 100%;
+    height: 240px;              
+    object-fit: cover;          
+    display: block;
+  }
+  @media (max-width: 576px) {
+    .card-img-top { height: 180px; }
+  }
+
+  
+  .btn.btn-primary {
+    background: linear-gradient(90deg, #6f42c1, #8a5bd6);
+    border: none;
+    border-radius: 28px;
+    padding: 8px 20px;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(111,66,193,0.12);
+  }
+  .btn.btn-primary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg,#5a32a3,#7a45c4);
+  }
+
+  
+  .col-12.bg-light.position-relative {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    overflow: hidden;
+    background: linear-gradient(180deg,#ffffff,#fff7f2);
+  }
+
+  
+  .position-absolute.top-0.start-0.m-2.p-2.bg-warning.rounded,
+  .position-absolute.bottom-0.end-0.m-2.p-2.bg-danger.rounded {
+    border-radius: 999px !important;
+    padding: .45rem .9rem !important;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transform: translateZ(0);
+  }
+  .position-absolute.top-0.start-0.m-2.p-2.bg-warning.rounded {
+    background: linear-gradient(90deg,#ffd166,#ffc107) !important;
+    color: #222;
+  }
+  .position-absolute.bottom-0.end-0.m-2.p-2.bg-danger.rounded {
+    background: linear-gradient(90deg,#ff5a6f,#dc3545) !important;
+    color: #fff;
+  }
+
+  
+  .card-header {
+    background: linear-gradient(90deg,#20c997,#17a2b8);
+    color: #fff;
+    font-weight: 700;
+    border-bottom: none;
+  }
+
+  
+  .table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  }
+  .table thead th {
+    background: #20c997;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    text-transform: none;
+  }
+  .table tbody td {
+    vertical-align: middle;
+    border-color: #f1f1f1;
+    color: #333;
+  }
+
+
+  .row .col.border[style] {
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .row .col.border[style*="background-color: green"] { background: #28a745; }
+  .row .col.border[style*="background-color: blue"] { background: #0d6efd; }
+  .row .col.border[style*="background-color: violet"] { background: #6f42c1; }
+
+  
+  .row.justify-content-end .col-4 {
+    padding: 20px 10px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 6px;
+  }
+  .row.justify-content-end .bg-info { background: #17a2b8 !important; }
+  .row.justify-content-end .bg-danger { background: #dc3545 !important; }
+  .row.justify-content-end .bg-warning { background: linear-gradient(90deg,#ffc107,#ffdd57) !important; color: #222 !important; }
+
+  
+  .mb-4 { margin-bottom: 1.25rem !important; }
+  .mt-4 { margin-top: 1.25rem !important; }
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid py-5">
+
+
+        <div class="row mb-4">
+            <div class="col-12 col-md-8">
+                <h1> FACIAL CLEANSER</h1>
+            </div>
+            <div class="col-12 col-md-4 text-md-end">
+                <a href="bootstrap.html" class="btn btn-primary">Back to Products</a>
+            </div>
+        </div>
+
+
+        <div class="row g-4 mb-4">
+        
+            <div class="col-12 col-md-6 col-lg-5">
+                <img src="photo_2025-08-19_07-02-32.jpg" class="img-fluid mb-3" alt="Product Image">
+            </div>
+        
+            <div class="col-12 col-md-6 col-lg-7">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Argento clear</h2>
+                        <h4 class="text-success">$30.99</h4>
+                    </div>
+                    <div class="col-12">
+                        <p>
+                            This is a detailed description of the product. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit.
+                            Nulla convallis egestas rhoncus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row justify-content-around mt-4">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="p-3 mb-3 bg-light border rounded text-center">
+                    <h5>Feature 1</h5>
+                    <img     class="img-fluid mb-3"  src="photo_2025-08-19_13-44-19.jpg">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, placeat consequatur non dignissimos assumenda maiores voluptates moll</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="p-3 mb-3 bg-light border rounded text-center">
+                    <h5>Feature 2</h5>
+                    <img    class="img-fluid mb-3" src="photo_2025-08-19_13-44-05.jpg">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos quasi minus odio deleniti, animi officiis eveniet sed esse accusamus illum!</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="p-3 mb-3 bg-light border rounded text-center">
+                    <h5>Feature 3</h5>
+                    <img    class="img-fluid mb-3" src="photo_2025-08-19_13-44-10.jpg"  >
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit explicabo fugit sit nulla placeat aliquid.</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row my-4">
+            <div class="col-12 col-md-6 mx-auto">
+                <form action="#" method="get">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Qty</span>
+                        <input type="number" class="form-control" value="1" min="1">
+                        <button class="btn btn-success" type="submit">Add to Cart</button>
+                    </div>
+                </form>
+                <button class="btn btn-outline-secondary w-100">Add to Wishlist</button>
+            </div>
+        </div>
+
+        
+        <div class="row d-none d-md-flex mt-4">
+            <div class="col-md-3">
+                <div class="bg-info p-2 mb-3 rounded">Related Product 1</div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-info p-2 mb-3 rounded">Related Product 2</div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-info p-2 mb-3 rounded">Related Product 3</div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-info p-2 mb-3 rounded invisible">Related Product 4 (invisible)</div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12  bg-light position-relative "style="height: 150px;">
+                <div class="position-absolute  top-0  start-0 m-2  p-2 bg-warning rounded">New</div>
+                <div class="position-absolute  bottom-0 end-0  m-2   p-2 bg-danger text-white rounded">Hot</div>
+            </div>
+        </div>
+
+    
+
+        <div class="row mt-4">
+            <div class="col-12 col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header">Product Specifications</div>
+                    <div class="card-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien sed nulla mattis
+                            feugiat.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Color</td>
+                            <td>Red</td>
+                        </tr>
+                        <tr>
+                            <td>Size</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td>1.5kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+      <script  src="js/popper.min.js"></script>
+      <script  src="js/jquery-3.7.1.js"></script>
+      <script   src="js/bootstrap.js"></script>
+</body>
+
+</html>
