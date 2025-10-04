@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+     .back-home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color:  brown;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      z-index: 1000;
+      transition: 0.3s, transform 0.2s;
+    }
+
+  
+  .back-home-btn:hover {
+      background-color: antiquewhite;
+      transform: translateY(-2px);
+    }
+    </style>
+</head>
+
+<body>
+      <a href="homepage.html" class="back-home-btn">🏠 Back to Home</a>
+    <h1 style="text-align: center; color: brown;">Form</h1>
+    
+        <form method="get" style="background-color:antiquewhite ;border-radius: 5px ;">
+            <div>
+                <label>User ID</label>
+                <input type="text">
+            </div>
+            <div>
+                <br>
+                <label>Last Name</label>
+                <input type="text">
+            </div>
+            <br>
+            <div>
+                <label>Email</label>
+                <input type="email" required>
+
+            </div>
+            <br>
+            <div>
+                <label>Password</label>
+                <input type="password">
+            </div>
+            <br>
+            <div>
+
+                <label>Repeat Password</label>
+
+                <input type="password">
+
+            </div>
+            <br>
+            <div>
+                <label>Birth Date</label>
+                <input type="date">
+
+            </div>
+            <br>
+            <div>
+                <label>User Picture</label>
+                <input type="file"  accept="image/*">
+            </div>
+            <br>
+          <fieldset>
+            <span>Gender</span>
+            <input type="radio" id="male" name="x">
+            <label for="male">Male</label>
+
+            <input type="radio" id="femal" name="x">
+
+            <label for="femal">Female</label>
+            
+            <input type="button" value="ok">
+            </fieldset>
+            <br>
+            <br>
+            <div>
+                <label>Faculty</label>
+                <select multiple size="1">
+                    <option name="1">minia unversity </option>
+                    <option name="2">cairo unversity</option>
+                    <option name="3"> alex unversity</option>
+                </select>
+            </div>
+            <br> 
+            <fieldset>
+            <span>Interests</span>
+
+            <input id="d" type="checkbox" value="programing">
+            <label for="d">programing</label>
+
+            <input id="b" type="checkbox" value="reading">
+            <label for="b"> reading</label>
+            <input id="a" type="checkbox" value="swimming">
+            <label for="a">swimming</label>
+            </fieldset>
+            <br>
+            <br>
+            <div>
+                <label>About You</label>
+                <textarea></textarea>
+            </div>
+            <br>
+            <input type="checkbox" value="terms"><span>I agreed to terms and condition<a
+                    href="photo_2025-08-13_15-50-59.jpg" target="_blank"> terms</a></span>
+
+            <br>
+            <input type="submit">
+            <input type="reset">
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

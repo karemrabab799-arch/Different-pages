@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 70%;
+      background: #ffffff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    table:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 18px;
+      color: black; 
+    }
+
+    th {
+      background: linear-gradient(90deg, #ff7eb9, #ff758c);
+      color: white;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) {
+      background: #f3f8ff;
+    }
+
+    tr:nth-child(odd) {
+      background: #ffffff;
+    }
+
+    tr:hover {
+      background: #e0f0ff;
+    }
+
+    td button {
+      background: #ff4b5c;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    td button:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+
+    .controls {
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .controls input {
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 16px;
+      outline: none;
+      width: 200px;
+      color: black; 
+    }
+
+    .controls button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+      transition: 0.3s, transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .controls button:nth-child(2) { background: #28a745; } 
+    .controls button:nth-child(3) { background: #dc3545; } 
+    .controls button:nth-child(4) { background: #17a2b8; } 
+    .controls button:nth-child(5) { background: #ffc107; color: #333; } 
+    .controls button:nth-child(6) { background: #6c757d; } 
+
+    .controls button:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+     .back-home-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: rgb(255, 0, 136);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      z-index: 1000;
+      transition: 0.3s, transform 0.2s;
+    }
+
+  
+  .back-home-btn:hover {
+      background-color: rgb(255, 191, 0);
+      transform: translateY(-2px);
+    }
+
+  </style>
+</head>
+<body>
+  
+  <a href="homepage.html" class="back-home-btn">🏠 Back to Home</a>
+
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="studentList"></tbody>
+  </table>
+
+  <div class="controls">
+    <input type="text" id="studentInput" placeholder="Enter student name">
+    <button onclick="addStudent()">Add Student</button>
+    <button onclick="removeLast()">Remove Last</button>
+    <button onclick="toUppercase()">Uppercase All</button>
+    <button onclick="filterLongNames()">Filter (len > 4)</button>
+    <button onclick="resetList()">Reset</button>
+  </div>
+
+  <script>
+    let students = ["Ali", "Sara", "Mona", "Omar"];
+    const originalStudents = [...students];
+
+    function render() {
+      const list = document.getElementById("studentList");
+      list.innerHTML = "";
+      students.forEach((name, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td>${name}</td><td><button onclick="removeStudent(${index})">X</button></td>`;
+        list.appendChild(row);
+      });
+    }
+
+    function addStudent() {
+      const input = document.getElementById("studentInput");
+      const name = input.value.trim();
+      if (name) {
+        students.push(name);
+        input.value = "";
+        render();
+      }
+    }
+    function removeStudent(index) {
+      students.splice(index, 1);
+      render();
+    }
+
+    function removeLast() {
+      students.pop();
+      render();
+    }
+
+    function toUppercase() {
+      students = students.map(s => s.toUpperCase());
+      render();
+    }
+
+    function filterLongNames() {
+      students = students.filter(s => s.length > 4);
+      render();
+    }
+
+    function resetList() {
+      students = [...originalStudents];
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
